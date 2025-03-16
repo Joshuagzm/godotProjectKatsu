@@ -15,8 +15,10 @@ func _on_mob_timer_timeout() -> void:
 	var mob = mob_scene.instantiate();
 	
 #	spawn at the some place
-	var mob_spawn_location = $"MobPath/MobSpawnLocation"
+	var mob_spawn_location = $MobPath/MobSpawnLocation
 	mob_spawn_location.progress_ratio = randf()
+	
+	mob.position = mob_spawn_location.position
 
 	# Spawn the mob by adding it to the Main scene.
 	print("ADDING SLIME")
