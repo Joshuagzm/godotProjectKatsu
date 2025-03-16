@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1x11naope8d5"]
+
+[ext_resource type="Texture2D" uid="uid://cm15n6gehv0eq" path="res://pixil-frame-0.png" id="1_3s14c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gl40"]
+radius = 4.12311
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3s14c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1gl40")

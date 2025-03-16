@@ -11,17 +11,22 @@ func _physics_process(delta: float) -> void:
 	
 	var direction_x := Input.get_axis("left", "right")
 	if direction_x:
+		if (velocity.x * direction_x < 0):
+			velocity.x = 0 
 		velocity.x = move_toward(velocity.x, direction_x * maxSpeed, ACCELERATION)
 	else:
 		velocity.x = move_toward(velocity.x, 0, maxSpeed)
 		
 	var direction_y := Input.get_axis("up", "down")
 	if direction_y:
+	# Snap reverse direction
+		if (velocity.y * direction_y < 0):
+			velocity.y = 0 
 		velocity.y = move_toward(velocity.y, direction_y * maxSpeed, ACCELERATION)
 	else:
 		velocity.y = move_toward(velocity.y, 0, maxSpeed)
 		
-	if (velocity.x != 0):
+	if (velocity.x != 0 || velocity.y != 0):
 		sprite_2d.animation = "running"
 	else: 
 		sprite_2d.animation = "idle"
