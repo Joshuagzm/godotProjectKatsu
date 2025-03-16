@@ -38,5 +38,3 @@ func _physics_process(delta: float) -> void:
 	elif (velocity.x > 0):
 		sprite_2d.flip_h = false
 			
-		
-	

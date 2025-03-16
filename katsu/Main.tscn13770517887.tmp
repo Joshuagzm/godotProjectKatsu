@@ -159,9 +159,9 @@ sources/0 = SubResource("TileSetAtlasSource_3dxm6")
 
 [sub_resource type="Curve2D" id="Curve2D_3dxm6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 72, 64, 0, 0, 0, 0, 1040, 72, 0, 0, 0, 0, 1024, 544, 0, 0, 0, 0, 80, 544, 0, 0, 0, 0, 184, 136, 0, 0, 0, 0, 912, 168, 0, 0, 0, 0, 904, 472, 0, 0, 0, 0, 368, 496, 0, 0, 0, 0, 464, 248, 0, 0, 0, 0, 760, 280, 0, 0, 0, 0, 616, 408, 0, 0, 0, 0, 72, 64)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1152, 0, 0, 0, 0, 0, 1152, 648, 0, 0, 0, 0, 0, 648, 0, 0, 0, 0, 0, 0)
 }
-point_count = 12
+point_count = 5
 
 [node name="main" type="Node"]
 script = ExtResource("1_fos0i")
@@ -204,7 +204,6 @@ scale = Vector2(2.5, 2.5)
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-autostart = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(526, 317)
@@ -213,8 +212,6 @@ position = Vector2(526, 317)
 curve = SubResource("Curve2D_3dxm6")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2(72, 64)
-rotation = 0.00826427
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
