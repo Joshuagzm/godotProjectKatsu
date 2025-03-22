@@ -193,10 +193,6 @@ tile_set = SubResource("TileSet_lgr22")
 position = Vector2(150, 350)
 scale = Vector2(0.75, 0.75)
 
-[node name="Slime" parent="." instance=ExtResource("2_btoec")]
-position = Vector2(944, 144)
-scale = Vector2(2.5, 2.5)
-
 [node name="MobTimer" type="Timer" parent="."]
 
 [node name="StartTimer" type="Timer" parent="."]

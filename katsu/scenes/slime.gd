@@ -55,7 +55,7 @@ func _on_firing_cooldown_timer_timeout() -> void:
 		var bullet = bullet_scene.instantiate()
 		bullet.top_level = true
 		bullet.global_position = global_position
-		add_child(bullet)
+		get_tree().root.add_child(bullet)
 
 func hit() -> void:
 	health -= 1
