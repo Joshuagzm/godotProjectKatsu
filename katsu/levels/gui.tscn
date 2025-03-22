@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cedlr7frw6er6"]
+[gd_scene load_steps=5 format=3 uid="uid://cedlr7frw6er6"]
 
 [ext_resource type="Script" uid="uid://cmsb0wtj7pml6" path="res://healthContainer.gd" id="1_xfm04"]
 [ext_resource type="Texture2D" uid="uid://dx4srh6oytm8s" path="res://heart.png" id="2_eqb1k"]
+[ext_resource type="Texture2D" uid="uid://bj2vd6r63vib0" path="res://fireball.png" id="3_m3epo"]
+[ext_resource type="Texture2D" uid="uid://d0lp8euiluibp" path="res://bullet.png" id="4_lpk8f"]
 
 [node name="gui" type="Node"]
 
@@ -9,10 +11,9 @@
 anchors_preset = -1
 anchor_right = 0.201
 anchor_bottom = 0.015
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 8.448
-offset_bottom = 8.28
+offset_right = -95.552
+offset_bottom = 0.280001
+scale = Vector2(2, 2)
 script = ExtResource("1_xfm04")
 
 [node name="1" type="TextureRect" parent="healthContainer"]
@@ -21,11 +22,11 @@ texture = ExtResource("2_eqb1k")
 
 [node name="2" type="TextureRect" parent="healthContainer"]
 layout_mode = 2
-texture = ExtResource("2_eqb1k")
+texture = ExtResource("3_m3epo")
 
 [node name="3" type="TextureRect" parent="healthContainer"]
 layout_mode = 2
-texture = ExtResource("2_eqb1k")
+texture = ExtResource("4_lpk8f")
 
 [node name="4" type="TextureRect" parent="healthContainer"]
 layout_mode = 2
@@ -52,9 +53,5 @@ layout_mode = 2
 texture = ExtResource("2_eqb1k")
 
 [node name="10" type="TextureRect" parent="healthContainer"]
-layout_mode = 2
-texture = ExtResource("2_eqb1k")
-
-[node name="11" type="TextureRect" parent="healthContainer"]
 layout_mode = 2
 texture = ExtResource("2_eqb1k")

@@ -11,7 +11,6 @@ func _ready() -> void:
 	var mainCharacter_node = get_node("MainCharacter")
 	mainCharacter_node.connect("main_character_damaged", gui_node.update_health)
 	gui_node.update_health(4)
-	print("hello world")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -31,7 +30,6 @@ func _on_mob_timer_timeout() -> void:
 	mob.set_deferred("collision_mask", 1)
 	mob.add_to_group("slime")
 	# Spawn the mob by adding it to the Main scene.
-	print("ADDING SLIME")
 	add_child(mob)
 	mob.connect("slime_die", update_score)
 	

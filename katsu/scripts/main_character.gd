@@ -48,14 +48,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, direction_y * maxSpeed, ACCELERATION)
 	else:
 		velocity.y = move_toward(velocity.y, 0, maxSpeed)
-		
+
 	if (velocity.x != 0 || velocity.y != 0):
 		sprite_2d.animation = "running"
 	else: 
 		sprite_2d.animation = "idle"
 
 	move_and_slide()
-	
+
 	if (velocity.x < 0):
 		sprite_2d.flip_h = true
 	elif (velocity.x > 0):
@@ -75,8 +75,7 @@ func die():
 
 func reset():
 	health = 4
-	
-	
+
 signal main_character_damaged(amount)
 
 func _on_body_entered(body: Node2D):
@@ -97,7 +96,6 @@ func get_closest_slime():
 			closest_distance = distance
 			closest_slime = slime
 	return closest_slime
-
 
 func shoot_bullet():
 	var closest_slime = get_closest_slime()
