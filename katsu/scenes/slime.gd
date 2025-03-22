@@ -11,6 +11,7 @@ var direction: Vector2
 
 enum states {IDLE, FIRING, MOVING}
 var state: states
+var health = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +33,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if ("MainCharacter" in body.name):
 		playerBody = body
+	
 
 func _on_start_timer_timeout() -> void:
 	state = states.FIRING
@@ -55,4 +57,13 @@ func _on_firing_cooldown_timer_timeout() -> void:
 		bullet.global_position = global_position
 		add_child(bullet)
 
+func hit() -> void:
+	health -= 1
+	if (health <= 0):
+		die()
+		
+func die() -> void:
+	slime_die.emit()
+	queue_free()
 	
+signal slime_die()

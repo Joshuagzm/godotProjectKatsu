@@ -2,10 +2,10 @@ extends Area2D
 
 var direction: Vector2
 const SPEED = 250
+var active = true;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("FIREBALL!")
 	var angle = randf() * TAU
 	direction = Vector2(cos(angle), sin(angle))
 	pass # Replace with function body.
@@ -22,3 +22,4 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if ("MainCharacter" in body.name):
 		body.take_damage(1)
+		queue_free()

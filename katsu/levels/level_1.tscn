@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dn8aa2q3xwgnm"]
+[gd_scene load_steps=11 format=4 uid="uid://dn8aa2q3xwgnm"]
 
 [ext_resource type="Script" uid="uid://cmpo52n5vqcp7" path="res://main.gd" id="1_n46q3"]
 [ext_resource type="PackedScene" uid="uid://j726b1cf8onu" path="res://scenes/slime.tscn" id="2_btoec"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://t4qkr00i1lwy" path="res://Gray.png" id="3_gwceb"]
 [ext_resource type="Texture2D" uid="uid://b6narm2hf0880" path="res://Terrain (16x16).png" id="4_l53as"]
 [ext_resource type="PackedScene" uid="uid://cyl8i2xrfrejf" path="res://scenes/MainCharacter.tscn" id="5_3sk1a"]
+[ext_resource type="Script" uid="uid://c2o8oxp2r4n3d" path="res://levels/gui.gd" id="7_gwceb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxm6"]
 texture = ExtResource("4_l53as")
@@ -214,6 +215,7 @@ position = Vector2(72, 64)
 rotation = 0.00826427
 
 [node name="gui" parent="." instance=ExtResource("3_btoec")]
+script = ExtResource("7_gwceb")
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

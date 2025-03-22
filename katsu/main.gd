@@ -2,9 +2,13 @@ extends Node
 
 @export var mob_scene: PackedScene
 
+var score = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var gui_node = get_node("gui/healthContainer")
+	var mainCharacter_node = get_node("MainCharacter")
+	mainCharacter_node.connect("main_character_damaged", gui_node.update_health)
 	gui_node.update_health(4)
 	print("hello world")
 
@@ -21,12 +25,27 @@ func _on_mob_timer_timeout() -> void:
 	mob_spawn_location.progress_ratio = randf()
 	
 	mob.position = mob_spawn_location.position
-
+	mob.set_deferred("collision_layer", 1)
+	mob.set_deferred("collision_mask", 1)
+	mob.add_to_group("slime")
 	# Spawn the mob by adding it to the Main scene.
 	print("ADDING SLIME")
 	add_child(mob)
+	mob.connect("slime_die", update_score)
+	
 
 
 func _on_start_timer_timeout() -> void:
 	print("STARTING")
 	$MobTimer.start()
+
+
+func update_health():
+	print("updating damage")
+	
+
+func update_score():
+	score += 1
+	print("SCORE UPDATED")
+	if (score >= 10):
+		get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
