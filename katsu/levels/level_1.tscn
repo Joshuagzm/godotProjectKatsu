@@ -1,0 +1,216 @@
+[gd_scene load_steps=9 format=4 uid="uid://dn8aa2q3xwgnm"]
+
+[ext_resource type="Script" uid="uid://cmpo52n5vqcp7" path="res://main.gd" id="1_n46q3"]
+[ext_resource type="PackedScene" uid="uid://j726b1cf8onu" path="res://scenes/slime.tscn" id="2_btoec"]
+[ext_resource type="Texture2D" uid="uid://t4qkr00i1lwy" path="res://Gray.png" id="3_gwceb"]
+[ext_resource type="Texture2D" uid="uid://b6narm2hf0880" path="res://Terrain (16x16).png" id="4_l53as"]
+[ext_resource type="PackedScene" uid="uid://cyl8i2xrfrejf" path="res://scenes/MainCharacter.tscn" id="5_3sk1a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxm6"]
+texture = ExtResource("4_l53as")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lgr22"]
+sources/0 = SubResource("TileSetAtlasSource_3dxm6")
+
+[sub_resource type="Curve2D" id="Curve2D_3dxm6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 72, 64, 0, 0, 0, 0, 1040, 72, 0, 0, 0, 0, 1024, 544, 0, 0, 0, 0, 80, 544, 0, 0, 0, 0, 184, 136, 0, 0, 0, 0, 912, 168, 0, 0, 0, 0, 904, 472, 0, 0, 0, 0, 368, 496, 0, 0, 0, 0, 464, 248, 0, 0, 0, 0, 760, 280, 0, 0, 0, 0, 616, 408, 0, 0, 0, 0, 72, 64)
+}
+point_count = 12
+
+[node name="level_1" type="Node"]
+script = ExtResource("1_n46q3")
+mob_scene = ExtResource("2_btoec")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gwceb")
+stretch_mode = 1
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_lgr22")
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+texture_filter = 1
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAAAAAAGAAAAAAABAAAAAAAHAAAAAAACAAAAAAAHAAAAAAADAAAAAAAHAAAAAAAEAAAAAAAHAAAAAAAFAAAAAAAHAAAAAAAGAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAIAAAAAAAHAAAAAAAJAAAAAAAHAAAAAAAKAAAAAAAHAAAAAAALAAAAAAAHAAAAAAAMAAAAAAAHAAAAAAANAAAAAAAHAAAAAAAOAAAAAAAHAAAAAAAPAAAAAAAHAAAAAAAQAAAAAAAHAAAAAAARAAAAAAAHAAAAAAASAAAAAAAHAAAAAAATAAAAAAAHAAAAAAAUAAAAAAAHAAAAAAAVAAAAAAAHAAAAAAAWAAAAAAAHAAAAAAAXAAAAAAAHAAAAAAAYAAAAAAAHAAAAAAAZAAAAAAAHAAAAAAAaAAAAAAAHAAAAAAAbAAAAAAAHAAAAAAAcAAAAAAAHAAAAAAAdAAAAAAAHAAAAAAAeAAAAAAAHAAAAAAAfAAAAAAAHAAAAAAAgAAAAAAAHAAAAAAAhAAAAAAAHAAAAAAAiAAAAAAAHAAAAAAAjAAAAAAAIAAAAAAAhAAEAAAASAAEAAAAiAAEAAAASAAEAAAAjAAEAAAATAAEAAAAjAAIAAAAIAAIAAAAjAAMAAAAIAAEAAAAjAAQAAAAIAAIAAAAjAAUAAAAIAAEAAAAjAAYAAAAIAAIAAAAjAAcAAAAIAAEAAAAjAAgAAAAIAAIAAAAjAAkAAAAIAAEAAAAjAAoAAAAIAAIAAAAjAAsAAAAIAAEAAAAjAAwAAAAIAAIAAAAjABEAAAAIAAEAAAAjABIAAAAIAAIAAAAjAA8AAAAIAAEAAAAjABAAAAAIAAIAAAAjAA0AAAAIAAEAAAAjAA4AAAAIAAIAAAAjABMAAAAIAAIAAAAiABMAAAAIAAIAAAAhABMAAAAIAAIAAAAgAAEAAAASAAEAAAAfAAEAAAASAAEAAAAeAAEAAAASAAEAAAAdAAEAAAASAAEAAAAcAAEAAAASAAEAAAAbAAEAAAASAAEAAAAaAAEAAAASAAEAAAAZAAEAAAASAAEAAAAYAAEAAAASAAEAAAAXAAEAAAASAAEAAAAWAAEAAAASAAEAAAAVAAEAAAASAAEAAAAUAAEAAAASAAEAAAATAAEAAAASAAEAAAASAAEAAAASAAEAAAARAAEAAAASAAEAAAAQAAEAAAASAAEAAAAPAAEAAAASAAEAAAAOAAEAAAASAAEAAAANAAEAAAASAAEAAAAMAAEAAAASAAEAAAALAAEAAAASAAEAAAAKAAEAAAASAAEAAAAJAAEAAAASAAEAAAAIAAEAAAASAAEAAAAHAAEAAAASAAEAAAAGAAEAAAASAAEAAAAFAAEAAAASAAEAAAAEAAEAAAASAAEAAAADAAEAAAASAAEAAAACAAEAAAASAAEAAAAAABIAAAAHAAEAAAAAABMAAAAHAAIAAAAAABAAAAAHAAEAAAAAABEAAAAHAAIAAAAAAA4AAAAHAAEAAAAAAA8AAAAHAAIAAAAAAAwAAAAHAAEAAAAAAA0AAAAHAAIAAAAAAAoAAAAHAAEAAAAAAAsAAAAHAAIAAAAAAAgAAAAHAAEAAAAAAAkAAAAHAAIAAAAAAAYAAAAHAAEAAAAAAAcAAAAHAAIAAAAAAAIAAAAHAAIAAAAAAAMAAAAHAAIAAAAAAAEAAAARAAEAAAAAAAQAAAAHAAEAAAAAAAUAAAAHAAIAAAABAAEAAAASAAEAAAABABMAAAAHAAIAAAACABMAAAAHAAIAAAADABMAAAAHAAIAAAAEABMAAAAHAAIAAAAFABMAAAAHAAIAAAAGABMAAAAHAAIAAAAIABMAAAAHAAIAAAAJABMAAAAHAAIAAAAKABMAAAAHAAIAAAALABMAAAAHAAIAAAAHABMAAAAHAAIAAAAMABMAAAAHAAIAAAANABMAAAAHAAIAAAAOABMAAAAHAAIAAAAPABMAAAAHAAIAAAAQABMAAAAHAAIAAAARABMAAAAHAAIAAAASABMAAAAHAAIAAAATABMAAAAHAAIAAAAUABMAAAAHAAIAAAAWABMAAAAHAAIAAAAXABMAAAAHAAIAAAAZABMAAAAHAAIAAAAaABMAAAAHAAIAAAAbABMAAAAHAAIAAAAdABMAAAAHAAIAAAAeABMAAAAHAAIAAAAfABMAAAAHAAIAAAAgABMAAAAHAAIAAAAcABMAAAAHAAIAAAAYABMAAAAHAAIAAAAVABMAAAAHAAIAAAA=")
+tile_set = SubResource("TileSet_lgr22")
+
+[node name="MainCharacter" parent="." instance=ExtResource("5_3sk1a")]
+position = Vector2(150, 350)
+scale = Vector2(0.75, 0.75)
+
+[node name="Slime" parent="." instance=ExtResource("2_btoec")]
+position = Vector2(944, 144)
+scale = Vector2(2.5, 2.5)
+
+[node name="MobTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(526, 317)
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_3dxm6")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2(72, 64)
+rotation = 0.00826427
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

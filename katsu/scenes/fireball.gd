@@ -10,11 +10,15 @@ func _ready() -> void:
 	direction = Vector2(cos(angle), sin(angle))
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
 func _physics_process(delta: float) -> void:
 	move_local_x(direction[0])
 	move_local_y(direction[1])
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if ("MainCharacter" in body.name):
+		body.take_damage(1)

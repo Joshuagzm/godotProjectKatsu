@@ -179,7 +179,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iivhx"]
-radius = 3.0
+radius = 7.07107
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 motion_mode = 1
@@ -189,7 +189,7 @@ script = ExtResource("1_udfat")
 position = Vector2(-1, -13)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fmn77")
-animation = &"idle"
+animation = &"running"
 autoplay = "idle"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
