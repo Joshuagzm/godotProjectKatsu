@@ -7,8 +7,8 @@
 [node name="main" type="Node"]
 script = ExtResource("1_r0du0")
 
-[node name="level_1" parent="." instance=ExtResource("1_uu6xs")]
-
 [node name="death" parent="." instance=ExtResource("2_r0du0")]
 
 [node name="winScreen" type="Node" parent="."]
+
+[node name="level_1" parent="." instance=ExtResource("1_uu6xs")]
