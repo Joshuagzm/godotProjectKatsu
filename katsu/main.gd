@@ -27,7 +27,7 @@ func _on_mob_timer_timeout() -> void:
 	
 	mob.position = mob_spawn_location.position
 	mob.set_deferred("collision_layer", 1)
-	mob.set_deferred("collision_mask", 1)
+	mob.set_deferred("collision_mask", 2)
 	mob.add_to_group("slime")
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
