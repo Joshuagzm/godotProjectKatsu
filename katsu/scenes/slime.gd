@@ -67,3 +67,8 @@ func die() -> void:
 	queue_free()
 	
 signal slime_die()
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if ("MainCharacter" in body.name):
+		body.take_damage(1)
+		queue_free()

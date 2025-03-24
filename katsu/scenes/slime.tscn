@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://j726b1cf8onu"]
+[gd_scene load_steps=18 format=3 uid="uid://j726b1cf8onu"]
 
 [ext_resource type="Texture2D" uid="uid://hl8bub5ef5y0" path="res://slime spritesheet calciumtrice.png" id="1_371uh"]
 [ext_resource type="Script" uid="uid://7ebmpdoot623" path="res://scenes/slime.gd" id="1_p2gj0"]
@@ -83,9 +83,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_371uh"]
-radius = 4.0
+radius = 2.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2gj0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n6pvg"]
+radius = 4.272
 
 [node name="Slime" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -127,8 +130,15 @@ one_shot = true
 [node name="FiringCooldownTimer" type="Timer" parent="."]
 wait_time = 0.1
 
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_n6pvg")
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="FiringTimer" to="." method="_on_firing_timer_timeout"]
 [connection signal="timeout" from="MovingTimer" to="." method="_on_moving_timer_timeout"]
 [connection signal="timeout" from="FiringCooldownTimer" to="." method="_on_firing_cooldown_timer_timeout"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_detection_area_body_entered"]
