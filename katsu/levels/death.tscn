@@ -156,16 +156,16 @@ sources/0 = SubResource("TileSetAtlasSource_kwl1f")
 [node name="death" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 640.0
+offset_right = 640.0
+offset_bottom = 360.0
 texture = ExtResource("1_y4ux3")
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = 264.0
-offset_top = 192.0
-offset_right = 600.0
-offset_bottom = 368.0
+offset_left = 176.0
+offset_top = 72.0
+offset_right = 512.0
+offset_bottom = 248.0
 theme_override_font_sizes/font_size = 60
 text = "You Died"
 

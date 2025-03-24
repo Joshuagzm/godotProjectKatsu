@@ -5,15 +5,15 @@
 [node name="winScreen" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 640.0
+offset_bottom = 360.0
 texture = ExtResource("1_wv5lq")
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = 448.0
-offset_top = 280.0
-offset_right = 660.0
-offset_bottom = 349.0
+offset_left = 200.0
+offset_top = 64.0
+offset_right = 412.0
+offset_bottom = 133.0
 theme_override_font_sizes/font_size = 50
 text = "You Win!"

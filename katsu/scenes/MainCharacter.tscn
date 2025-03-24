@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b0t33557uqcow" path="res://scripts/main_character.gd" id="1_udfat"]
 [ext_resource type="Texture2D" uid="uid://c1ij40satxbjk" path="res://Idle (32x32).png" id="2_iivhx"]
 [ext_resource type="Texture2D" uid="uid://cj78irxufyblo" path="res://Run (32x32).png" id="3_8wgdu"]
-[ext_resource type="Script" uid="uid://c2vbtp8qth880" path="res://scenes/enemy_detection.gd" id="4_8wgdu"]
-[ext_resource type="Script" uid="uid://b8sewkswh4yko" path="res://scenes/detection_area.gd" id="4_ppvyy"]
+[ext_resource type="Script" path="res://scenes/enemy_detection.gd" id="4_8wgdu"]
+[ext_resource type="Script" path="res://scenes/detection_area.gd" id="4_ppvyy"]
 [ext_resource type="Texture2D" uid="uid://c8noxwt6hj0b4" path="res://pixil-frame-0 (4).png" id="6_1hnck"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppvyy"]

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 400.0
-const ACCELERATION = 50
-const FOCUS_SPEED = 200.0
+const SPEED = 200.0
+const ACCELERATION = 25
+const FOCUS_SPEED = 100.0
 
 # stats
 var firing = false;

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://t4qkr00i1lwy" path="res://Gray.png" id="3_gwceb"]
 [ext_resource type="Texture2D" uid="uid://b6narm2hf0880" path="res://Terrain (16x16).png" id="4_l53as"]
 [ext_resource type="PackedScene" uid="uid://cyl8i2xrfrejf" path="res://scenes/MainCharacter.tscn" id="5_3sk1a"]
-[ext_resource type="Script" uid="uid://c2o8oxp2r4n3d" path="res://levels/gui.gd" id="7_gwceb"]
+[ext_resource type="Script" path="res://levels/gui.gd" id="7_gwceb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxm6"]
 texture = ExtResource("4_l53as")
@@ -160,9 +160,9 @@ sources/0 = SubResource("TileSetAtlasSource_3dxm6")
 
 [sub_resource type="Curve2D" id="Curve2D_3dxm6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 72, 64, 0, 0, 0, 0, 1040, 72, 0, 0, 0, 0, 1024, 544, 0, 0, 0, 0, 80, 544, 0, 0, 0, 0, 184, 136, 0, 0, 0, 0, 912, 168, 0, 0, 0, 0, 904, 472, 0, 0, 0, 0, 368, 496, 0, 0, 0, 0, 464, 248, 0, 0, 0, 0, 760, 280, 0, 0, 0, 0, 616, 408, 0, 0, 0, 0, 72, 64)
+"points": PackedVector2Array(0, 0, 0, 0, 592, 56, 0, 0, 0, 0, 592, 336, 0, 0, 0, 0, 536, 336, 0, 0, 0, 0, 536, 64, 0, 0, 0, 0, 592, 56)
 }
-point_count = 12
+point_count = 5
 
 [node name="level_1" type="Node"]
 script = ExtResource("1_n46q3")
@@ -180,7 +180,7 @@ stretch_mode = 1
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
+scale = Vector2(1.11753, 1.12265)
 tile_set = SubResource("TileSet_lgr22")
 
 [node name="Tiles" type="TileMapLayer" parent="TileMap"]
@@ -190,8 +190,8 @@ tile_map_data = PackedByteArray("AAAHAAAAAAAHAAAAAAAIAAAAAAAHAAAAAAAJAAAAAAAHAAA
 tile_set = SubResource("TileSet_lgr22")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_3sk1a")]
-position = Vector2(152, 336)
-scale = Vector2(0.75, 0.75)
+position = Vector2(80, 176)
+scale = Vector2(0.6, 0.6)
 
 [node name="MobTimer" type="Timer" parent="."]
 
@@ -207,8 +207,8 @@ position = Vector2(526, 317)
 curve = SubResource("Curve2D_3dxm6")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2(72, 64)
-rotation = 0.00826427
+position = Vector2(592, 56)
+rotation = 1.5708
 
 [node name="gui" parent="." instance=ExtResource("3_btoec")]
 script = ExtResource("7_gwceb")
