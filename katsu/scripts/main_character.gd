@@ -81,7 +81,6 @@ signal main_character_damaged(amount)
 func _on_body_entered(body: Node2D):
 	if (body.is_in_group("slime")):
 		slimes.append(body)
-		print("appending slime")
 
 func _on_body_exited(body: Node2D):
 	if body.is_in_group("slime"):

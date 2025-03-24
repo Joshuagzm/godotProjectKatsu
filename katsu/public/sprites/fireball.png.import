@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx4srh6oytm8s"
-path="res://.godot/imported/heart.png-46ac0108226a8969f121b451c7b38c9b.ctex"
+uid="uid://bj2vd6r63vib0"
+path="res://.godot/imported/fireball.png-87379c3b0a0ac1048864d0f8568bccb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heart.png"
-dest_files=["res://.godot/imported/heart.png-46ac0108226a8969f121b451c7b38c9b.ctex"]
+source_file="res://public/sprites/fireball.png"
+dest_files=["res://.godot/imported/fireball.png-87379c3b0a0ac1048864d0f8568bccb0.ctex"]
 
 [params]
 

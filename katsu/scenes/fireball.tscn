@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1x11naope8d5"]
 
 [ext_resource type="Script" uid="uid://cvrivgglq18bg" path="res://scenes/fireball.gd" id="1_1gl40"]
-[ext_resource type="Texture2D" uid="uid://cm15n6gehv0eq" path="res://pixil-frame-0.png" id="1_3s14c"]
+[ext_resource type="Texture2D" uid="uid://cm15n6gehv0eq" path="res://public/sprites/pixil-frame-0.png" id="1_3s14c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1gl40"]
 radius = 4.12311

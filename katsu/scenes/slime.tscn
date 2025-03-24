@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://j726b1cf8onu"]
 
-[ext_resource type="Texture2D" uid="uid://hl8bub5ef5y0" path="res://slime spritesheet calciumtrice.png" id="1_371uh"]
+[ext_resource type="Texture2D" uid="uid://hl8bub5ef5y0" path="res://public/spritesheets/slime spritesheet calciumtrice.png" id="1_371uh"]
 [ext_resource type="Script" uid="uid://7ebmpdoot623" path="res://scenes/slime.gd" id="1_p2gj0"]
 [ext_resource type="PackedScene" uid="uid://c1x11naope8d5" path="res://scenes/fireball.tscn" id="2_n6pvg"]
 

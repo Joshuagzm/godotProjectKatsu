@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hl8bub5ef5y0"
-path="res://.godot/imported/slime spritesheet calciumtrice.png-993293e4ff4e39318dffea6a52a12d57.ctex"
+uid="uid://cge5kq00rj78r"
+path="res://.godot/imported/Layer_0009_2.png-15054d9b16bae4fefd6254b0ff56f10f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://slime spritesheet calciumtrice.png"
-dest_files=["res://.godot/imported/slime spritesheet calciumtrice.png-993293e4ff4e39318dffea6a52a12d57.ctex"]
+source_file="res://public/backgrounds/forest/Layer_0009_2.png"
+dest_files=["res://.godot/imported/Layer_0009_2.png-15054d9b16bae4fefd6254b0ff56f10f.ctex"]
 
 [params]
 

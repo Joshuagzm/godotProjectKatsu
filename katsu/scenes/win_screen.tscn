@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://byrok17vbwf5o"]
 
-[ext_resource type="Texture2D" uid="uid://d26e82kstxxfb" path="res://Green.png" id="1_wv5lq"]
+[ext_resource type="Texture2D" uid="uid://d26e82kstxxfb" path="res://public/tiles/Green.png" id="1_wv5lq"]
 
 [node name="winScreen" type="Node"]
 
