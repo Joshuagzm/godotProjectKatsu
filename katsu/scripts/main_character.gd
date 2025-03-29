@@ -97,14 +97,13 @@ func get_closest_slime():
 	return closest_slime
 
 func shoot_bullet():
+	var direction = Vector2(1, 0);
 	var closest_slime = get_closest_slime()
 	if closest_slime:
-		var direction = (closest_slime.global_position - global_position).normalized()
-		var bullet_instance = player_bullet_scene.instantiate()
-		bullet_instance.top_level = true
-		bullet_instance.global_position = global_position
-		bullet_instance.initialize(direction)  # Pass the direction to the bullet
-		bullet_instance.add_to_group("player_bullets")
-		add_child(bullet_instance)
-	else:
-		print("No slimes detected!")
+		direction = (closest_slime.global_position - global_position).normalized()
+	var bullet_instance = player_bullet_scene.instantiate()
+	bullet_instance.top_level = true
+	bullet_instance.global_position = global_position
+	bullet_instance.initialize(direction)  # Pass the direction to the bullet
+	bullet_instance.add_to_group("player_bullets")
+	add_child(bullet_instance)
