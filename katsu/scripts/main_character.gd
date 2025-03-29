@@ -12,6 +12,8 @@ var health = 4
 var slimes = []
 
 # states
+enum HITSTATE {NEUTRAL, INVINCIBLE}
+var hitState = HITSTATE.NEUTRAL
 
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
@@ -52,9 +54,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, maxSpeed)
 
 	if (velocity.x != 0 || velocity.y != 0):
-		sprite_2d.animation = "running"
+		changeAnimation("running")
 	else: 
-		sprite_2d.animation = "idle"
+		changeAnimation("idle")
 
 	move_and_slide()
 
@@ -64,11 +66,15 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.flip_h = false
 
 func take_damage(damage_value):
-	health -= damage_value
-	var format_string = "hit, health remaining: %s"
-	main_character_damaged.emit(health)
-	if health <= 0:
-		die()
+	if(hitState != HITSTATE.INVINCIBLE):
+		$InvincibilityTimer.start(1)
+		hitState = HITSTATE.INVINCIBLE
+		changeAnimation("invincible", 1)
+		health -= damage_value
+		var format_string = "hit, health remaining: %s"
+		main_character_damaged.emit(health)
+		if health <= 0:
+			die()
 
 func die():
 	get_tree().change_scene_to_file("res://levels/death.tscn")
@@ -106,3 +112,17 @@ func shoot_bullet():
 	bullet_instance.initialize(direction)
 	bullet_instance.add_to_group("player_bullets")
 	get_parent().add_child(bullet_instance)
+
+func changeAnimation(animation: String, lockDuration: int = 0):
+	if $AnimationTimer.is_stopped():
+		if (lockDuration > 0):
+			$AnimationTimer.start(lockDuration)
+		print("Playing animation")
+		sprite_2d.animation = animation
+		
+
+func _on_invincibility_timer_timeout() -> void:
+	hitState = HITSTATE.NEUTRAL
+
+func _on_animation_timer_timeout() -> void:
+	pass # Replace with function body.

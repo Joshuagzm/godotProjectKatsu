@@ -32,8 +32,6 @@ func _on_mob_timer_timeout() -> void:
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
 	mob.connect("slime_die", update_score)
-	
-
 
 func _on_start_timer_timeout() -> void:
 	$MobTimer.start()

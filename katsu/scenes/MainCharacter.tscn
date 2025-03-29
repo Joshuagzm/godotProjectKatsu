@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://cyl8i2xrfrejf"]
+[gd_scene load_steps=36 format=3 uid="uid://cyl8i2xrfrejf"]
 
 [ext_resource type="Script" uid="uid://b0t33557uqcow" path="res://scripts/main_character.gd" id="1_udfat"]
 [ext_resource type="Texture2D" uid="uid://c1ij40satxbjk" path="res://public/spritesheets/Idle (32x32).png" id="2_iivhx"]
+[ext_resource type="Texture2D" uid="uid://clhyc080mru4l" path="res://public/spritesheets/Hit (32x32).png" id="3_3h3nx"]
 [ext_resource type="Texture2D" uid="uid://cj78irxufyblo" path="res://public/spritesheets/Run (32x32).png" id="3_8wgdu"]
 [ext_resource type="Script" path="res://scenes/enemy_detection.gd" id="4_8wgdu"]
 [ext_resource type="Script" uid="uid://b8sewkswh4yko" path="res://scenes/detection_area.gd" id="4_ppvyy"]
@@ -50,6 +51,14 @@ region = Rect2(288, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytwf3"]
 atlas = ExtResource("2_iivhx")
 region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmn77"]
+atlas = ExtResource("3_3h3nx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuoa1"]
+atlas = ExtResource("3_3h3nx")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wm1n"]
 atlas = ExtResource("3_8wgdu")
@@ -141,6 +150,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fmn77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuoa1")
+}],
+"loop": true,
+"name": &"invincible",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3wm1n")
 }, {
 "duration": 1.0,
@@ -188,6 +208,7 @@ radius = 7.07107
 size = Vector2(3000, 3000)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_udfat")
@@ -196,8 +217,8 @@ script = ExtResource("1_udfat")
 position = Vector2(-1, -13)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fmn77")
-animation = &"running"
-autoplay = "idle"
+animation = &"idle"
+autoplay = "invincible"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iivhx")
@@ -217,4 +238,12 @@ one_shot = true
 scale = Vector2(1.575, 1.575)
 texture = ExtResource("6_1hnck")
 
+[node name="InvincibilityTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
