@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://duxhfcrp3ks7h"]
+
+[ext_resource type="Script" uid="uid://bh0w6raxkngi5" path="res://gameManager.gd" id="1_3sjs6"]
+[ext_resource type="PackedScene" uid="uid://cbo02d7cq3qvc" path="res://levels/death.tscn" id="2_nxldc"]
+[ext_resource type="PackedScene" uid="uid://byrok17vbwf5o" path="res://scenes/win_screen.tscn" id="3_teb4g"]
+[ext_resource type="PackedScene" uid="uid://dn8aa2q3xwgnm" path="res://levels/level_1.tscn" id="4_18gl4"]
+[ext_resource type="PackedScene" uid="uid://dsxnkne0hbkxl" path="res://scenes/title_screen.tscn" id="5_1ktcw"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_3sjs6")
+
+[node name="death" parent="." instance=ExtResource("2_nxldc")]
+
+[node name="winScreen" parent="." instance=ExtResource("3_teb4g")]
+
+[node name="level_1" parent="." instance=ExtResource("4_18gl4")]
+
+[node name="title_screen" parent="." instance=ExtResource("5_1ktcw")]

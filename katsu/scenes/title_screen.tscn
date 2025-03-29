@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsxnkne0hbkxl"]
+
+[ext_resource type="Script" uid="uid://x0nf0jgjx2mu" path="res://scenes/title_screen.gd" id="1_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://srd3xha3bx4r" path="res://public/sprites/Jump (32x32).png" id="2_mgrm8"]
+[ext_resource type="Texture2D" uid="uid://cyj7ym653cisy" path="res://public/sprites/Fall (32x32).png" id="3_dc4i4"]
+[ext_resource type="Texture2D" uid="uid://b3gmpjkd480qv" path="res://public/sprites/Idle.png" id="4_e54dn"]
+
+[sub_resource type="GDScript" id="GDScript_fgkus"]
+
+[node name="title_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sa3yf")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 232.0
+offset_right = 568.0
+offset_bottom = 263.0
+text = "Start
+"
+script = SubResource("GDScript_fgkus")
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 272.0
+offset_right = 568.0
+offset_bottom = 303.0
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 48.0
+offset_right = 424.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 47
+text = "Sick Title"
+
+[node name="Jump(32x32)" type="Sprite2D" parent="."]
+position = Vector2(168, 208)
+scale = Vector2(4, 4)
+texture = ExtResource("2_mgrm8")
+
+[node name="Fall(32x32)" type="Sprite2D" parent="Jump(32x32)"]
+position = Vector2(-8, 14)
+scale = Vector2(0.617187, 0.714638)
+texture = ExtResource("3_dc4i4")
+
+[node name="Idle" type="Sprite2D" parent="Jump(32x32)"]
+position = Vector2(18, 20)
+scale = Vector2(0.583333, 0.583333)
+texture = ExtResource("4_e54dn")
+
+[node name="Idle" type="Sprite2D" parent="Jump(32x32)/Idle"]
+position = Vector2(20.5714, -4.76837e-06)
+scale = Vector2(1.00298, 1.00298)
+texture = ExtResource("4_e54dn")
+
+[node name="Idle" type="Sprite2D" parent="Jump(32x32)/Idle/Idle"]
+position = Vector2(-6.8368, -20.5104)
+scale = Vector2(1.00298, 1.00298)
+texture = ExtResource("4_e54dn")
+
+[connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="StartButton" to="StartButton" method="_on_button_up"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]

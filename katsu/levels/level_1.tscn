@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://dn8aa2q3xwgnm"]
 
-[ext_resource type="Script" uid="uid://cmpo52n5vqcp7" path="res://main.gd" id="1_n46q3"]
+[ext_resource type="Script" uid="uid://cmpo52n5vqcp7" path="res://level_1.gd" id="1_n46q3"]
 [ext_resource type="PackedScene" uid="uid://j726b1cf8onu" path="res://scenes/slime.tscn" id="2_btoec"]
 [ext_resource type="PackedScene" uid="uid://cedlr7frw6er6" path="res://levels/gui.tscn" id="3_btoec"]
 [ext_resource type="Texture2D" uid="uid://t4qkr00i1lwy" path="res://public/tiles/Gray.png" id="3_gwceb"]
@@ -215,9 +215,6 @@ curve = SubResource("Curve2D_3dxm6")
 position = Vector2(592, 56)
 rotation = 1.5708
 
-[node name="gui" parent="." instance=ExtResource("3_btoec")]
-script = ExtResource("7_gwceb")
-
 [node name="parallax" type="Node2D" parent="."]
 
 [node name="forest_parallax" type="ParallaxBackground" parent="parallax"]
@@ -251,6 +248,9 @@ position = Vector2(0, -160)
 scale = Vector2(0.691677, 0.691677)
 texture = ExtResource("10_aerfg")
 centered = false
+
+[node name="gui" parent="." instance=ExtResource("3_btoec")]
+script = ExtResource("7_gwceb")
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://byrok17vbwf5o"]
+[gd_scene load_steps=3 format=3 uid="uid://byrok17vbwf5o"]
 
+[ext_resource type="Script" uid="uid://d2we7m5uvpnup" path="res://scenes/win_screen.gd" id="1_erk2x"]
 [ext_resource type="Texture2D" uid="uid://d26e82kstxxfb" path="res://public/tiles/Green.png" id="1_wv5lq"]
 
 [node name="winScreen" type="Node"]
+script = ExtResource("1_erk2x")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 640.0
@@ -17,3 +19,12 @@ offset_right = 412.0
 offset_bottom = 133.0
 theme_override_font_sizes/font_size = 50
 text = "You Win!"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 272.0
+offset_top = 232.0
+offset_right = 337.0
+offset_bottom = 264.0
+text = "Restart"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

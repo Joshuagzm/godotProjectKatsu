@@ -11,6 +11,9 @@ var health = 4
 # supplementary
 var slimes = []
 
+# states
+
+
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var detection_area = $DetectionArea  # Replace with your detection area node
 
@@ -24,7 +27,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("fire"):
 		if $ShootTimer.is_stopped():
 			firing = true
-			print("FIRING BULLET")
 			shoot_bullet()
 			$ShootTimer.start()
 
@@ -64,13 +66,11 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage_value):
 	health -= damage_value
 	var format_string = "hit, health remaining: %s"
-	print(format_string % health)
 	main_character_damaged.emit(health)
 	if health <= 0:
 		die()
 
 func die():
-	print("Player has died")
 	get_tree().change_scene_to_file("res://levels/death.tscn")
 
 func reset():
@@ -102,8 +102,7 @@ func shoot_bullet():
 	if closest_slime:
 		direction = (closest_slime.global_position - global_position).normalized()
 	var bullet_instance = player_bullet_scene.instantiate()
-	bullet_instance.top_level = true
 	bullet_instance.global_position = global_position
-	bullet_instance.initialize(direction)  # Pass the direction to the bullet
+	bullet_instance.initialize(direction)
 	bullet_instance.add_to_group("player_bullets")
-	add_child(bullet_instance)
+	get_parent().add_child(bullet_instance)

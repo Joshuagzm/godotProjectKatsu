@@ -36,16 +36,9 @@ func _on_mob_timer_timeout() -> void:
 
 
 func _on_start_timer_timeout() -> void:
-	print("STARTING")
 	$MobTimer.start()
-
-
-func update_health():
-	print("updating damage")
-	
 
 func update_score():
 	score += 1
-	print("SCORE UPDATED")
 	if (score >= 10):
 		get_tree().change_scene_to_file("res://scenes/win_screen.tscn")

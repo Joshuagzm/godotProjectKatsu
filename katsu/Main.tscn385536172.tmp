@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://duxhfcrp3ks7h"]
+[gd_scene load_steps=6 format=3 uid="uid://duxhfcrp3ks7h"]
 
 [ext_resource type="Script" uid="uid://bh0w6raxkngi5" path="res://gameManager.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://dn8aa2q3xwgnm" path="res://levels/level_1.tscn" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://cbo02d7cq3qvc" path="res://levels/death.tscn" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://byrok17vbwf5o" path="res://scenes/win_screen.tscn" id="3_cm0pq"]
+[ext_resource type="Script" uid="uid://cgjaa8xwlptt4" path="res://margin_container.gd" id="5_fos0i"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_r0du0")
@@ -13,3 +14,17 @@ script = ExtResource("1_r0du0")
 [node name="winScreen" parent="." instance=ExtResource("3_cm0pq")]
 
 [node name="level_1" parent="." instance=ExtResource("1_uu6xs")]
+
+[node name="title_screen" type="Node" parent="."]
+
+[node name="Control" type="Control" parent="title_screen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="MarginContainer" type="MarginContainer" parent="title_screen/Control"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+script = ExtResource("5_fos0i")

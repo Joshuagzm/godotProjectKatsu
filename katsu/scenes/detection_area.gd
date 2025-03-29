@@ -25,6 +25,3 @@ func update_closest_body():
 			if distance < closest_distance:
 				closest_distance = distance
 				closest_body = body
-		print("Closest slime: ", closest_body.name)
-	else:
-		print("No slimes detected.")

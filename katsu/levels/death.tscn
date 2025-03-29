@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbo02d7cq3qvc"]
+[gd_scene load_steps=6 format=3 uid="uid://cbo02d7cq3qvc"]
 
+[ext_resource type="Script" uid="uid://cme73eed0ysi4" path="res://levels/death.gd" id="1_kwl1f"]
 [ext_resource type="Texture2D" uid="uid://sttcd8al4du4" path="res://public/tiles/Blue.png" id="1_y4ux3"]
 [ext_resource type="Texture2D" uid="uid://b6narm2hf0880" path="res://public/tiles/Terrain (16x16).png" id="2_f0f48"]
 
@@ -154,6 +155,7 @@ texture = ExtResource("2_f0f48")
 sources/0 = SubResource("TileSetAtlasSource_kwl1f")
 
 [node name="death" type="Node"]
+script = ExtResource("1_kwl1f")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 640.0
@@ -173,3 +175,12 @@ text = "You Died"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer"]
 tile_set = SubResource("TileSet_fn24e")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 264.0
+offset_top = 232.0
+offset_right = 344.0
+offset_bottom = 263.0
+text = "Restart"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
